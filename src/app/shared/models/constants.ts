@@ -41,72 +41,7 @@ export class Constant {
          email: 'abc@gn.com',
          password: '123456',
          city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      {
-         firstName: 'Shruti',
-         lastName: 'Sawant',
-         mobileNumber: 6789445667,
-         email: 'abc@gn.com',
-         password: '123456',
-         city: 'Pune',
-      },
-      
+      }
    ];
    public static tableHeading = ['firstName', 'lastName', 'mobileNumber', 'email', 'city', 'action'];
 }

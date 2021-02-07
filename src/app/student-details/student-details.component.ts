@@ -5,6 +5,7 @@ import { IStudentData } from '../shared/models/details.model';
 import { Constant } from '../shared/models/constants';
 import { EditDataComponent } from '../shared/component/edit-data/edit-data.component';
 import { Labels } from '../shared/models/labels';
+import {MatTableDataSource} from '@angular/material/table';
 
 
 @Component({
@@ -13,16 +14,15 @@ import { Labels } from '../shared/models/labels';
    styleUrls: ['./student-details.component.scss']
 })
 export class StudentDetailsComponent implements OnInit {
-   dataSource = [];
+   dataSource = new MatTableDataSource(Constant.studentData);
    labels = Labels.studentDataLabels;
    displayedColumns = Constant.tableHeading;
 
    constructor(public matDialog: MatDialog, private readonly studentDataService: StudentDataService) { }
 
    ngOnInit() {
-      this.dataSource = Constant.studentData;
       if (this.studentDataService.getNewStudentData()) {
-         this.dataSource.push(this.studentDataService.getNewStudentData());
+         this.dataSource.data.push(this.studentDataService.getNewStudentData());
       }
    }
    openEditDialog(rowData) {
@@ -33,16 +33,20 @@ export class StudentDetailsComponent implements OnInit {
    }
 
    saveNewDetails(newDetails, oldDetails) {
-      const index = this.dataSource.indexOf(oldDetails);
+      const tempArray = this.dataSource.filteredData;
+      const index = tempArray.indexOf(oldDetails);
       if (index > -1) {
-         this.dataSource.splice(index, 1, newDetails);
+         tempArray.splice(index, 1, newDetails);
+         this.dataSource = new MatTableDataSource(tempArray);
       }
 
    }
    deleteData(data) {
-      const index = this.dataSource.indexOf(data);
+      const tempArray = this.dataSource.filteredData;
+      const index = tempArray.indexOf(data);
       if (index > -1) {
-         this.dataSource.splice(index, 1);
+         tempArray.splice(index, 1);
+         this.dataSource = new MatTableDataSource(tempArray);
       }
    }
 }
