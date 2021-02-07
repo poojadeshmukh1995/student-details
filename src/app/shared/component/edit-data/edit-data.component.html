@@ -1,0 +1,31 @@
+<div >
+      <h1 mat-dialog-title>{{labels.editHeading}}</h1>
+      <form [formGroup]="registerForm">
+         <div class="container" mat-dialog-content>
+            <div class='container__form-control'>
+               <mat-form-field appearance="legacy">
+                  <input matInput placeholder=" Enter your first name" formControlName="firstName">
+               </mat-form-field>
+               <mat-form-field appearance="legacy">
+                  <input matInput placeholder=" Enter your last name" formControlName="lastName">
+               </mat-form-field>
+               <mat-form-field appearance="legacy">
+                  <input matInput placeholder=" Enter your cell number" formControlName="mobileNumber">
+               </mat-form-field>
+               <mat-form-field appearance="legacy">
+                  <input matInput placeholder=" Enter your email" formControlName="email">
+               </mat-form-field>
+               <mat-form-field appearance="legacy">
+                  <input matInput placeholder=" Enter password" formControlName="password">
+               </mat-form-field>
+               <mat-form-field appearance="legacy">
+                  <input matInput placeholder=" City" formControlName="city">
+               </mat-form-field>
+            </div>
+            <mat-dialog-actions>
+               <button mat-raised-button color="primary" [mat-dialog-close]="registerForm.value" cdkFocusInitial>{{labels.saveButton}}</button>
+               <button mat-raised-button mat-button mat-dialog-close>{{labels.cancelButton}}</button>
+            </mat-dialog-actions>
+         </div>
+      </form>
+</div>

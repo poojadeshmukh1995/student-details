@@ -1,0 +1,32 @@
+<div class="container">
+   <div class="container__sub-container">
+      <div class="container__heading">{{labels.registerHeading}}</div>
+      <form [formGroup]="registerForm" (submit)="onRegister()">
+         <div class='container__form-control'>
+            <mat-form-field appearance="legacy">
+               <input matInput placeholder=" Enter your first name" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+               <input matInput placeholder=" Enter your last name" formControlName="lastName">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+               <input matInput placeholder=" Enter your cell number" formControlName="mobileNumber">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+               <input matInput placeholder=" Enter your email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+               <input matInput placeholder=" Enter password" formControlName="password">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+               <mat-label>{{labels.selectCity}}</mat-label>
+               <mat-select formControlName="city">
+                  <mat-option>-------</mat-option>
+                  <mat-option [value]="city" *ngFor="let city of cities">{{city}}</mat-option>
+               </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">{{labels.registerButton}}</button>
+         </div>
+      </form>
+   </div>
+</div>

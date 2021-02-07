@@ -1,0 +1,31 @@
+.container {
+   display: grid;
+   background-color: indigo;
+   height: 100vh;
+
+   h1 {
+      margin: auto;
+      color: lightblue;
+   }
+}
+
+.sub-container {
+   height: 500px;
+   overflow: auto;
+}
+
+table {
+   height: 100%;
+   width: 100%;
+
+   th {
+      padding-left: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+   }
+
+   td {
+      padding-left: 50px;
+      font-size: 1rem;
+   }
+}

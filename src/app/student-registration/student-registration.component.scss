@@ -1,0 +1,29 @@
+.container {
+   background-color: indigo;
+   height: 100vh;
+   display: grid;
+   justify-content: center;
+
+   &__sub-container {
+      background-color: azure;
+      width: 600px;
+
+      .mat-form-field,
+      button {
+         width: 90%;
+         padding-left: 30px;
+      }
+   }
+
+   &__heading {
+      text-align: center;
+      font-weight: bold;
+      padding-top: 30px;
+      font-size: 2rem;
+   }
+
+   &__form-control {
+      text-align: center;
+      padding-top: 30px;
+   }
+}
