@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StudentDataService } from '../student-data.service';
 import { Labels } from '../shared/models/labels';
+import { Constant } from '../shared/models/constants';
 
 @Component({
    selector: 'app-student-registration',
@@ -12,7 +13,7 @@ import { Labels } from '../shared/models/labels';
 export class StudentRegistrationComponent implements OnInit {
    registerForm: FormGroup;
    labels = Labels.studentRegisterLabels;
-   cities = ['Pune', 'Mumbai', 'Amravati', 'Hydrabad', 'Akola', 'Nagpur'];
+   cities = Constant.cityArray;
    constructor(private readonly fb: FormBuilder, private readonly router: Router,
                private readonly studentDataService: StudentDataService) { }
 

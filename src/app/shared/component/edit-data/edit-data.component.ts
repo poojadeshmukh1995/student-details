@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Labels } from '../../models/labels';
+import { Constant } from '../../models/constants';
 
 @Component({
    selector: 'app-edit-data',
@@ -11,6 +12,7 @@ import { Labels } from '../../models/labels';
 export class EditDataComponent implements OnInit {
    registerForm: FormGroup;
    labels = Labels.editDataLabels;
+   cities = Constant.cityArray;
    constructor(private readonly fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
    ngOnInit() {

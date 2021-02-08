@@ -44,4 +44,5 @@ export class Constant {
       }
    ];
    public static tableHeading = ['firstName', 'lastName', 'mobileNumber', 'email', 'city', 'action'];
+   public static cityArray = ['Pune', 'Mumbai', 'Amravati', 'Hydrabad', 'Akola', 'Nagpur'];
 }
