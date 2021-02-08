@@ -26,7 +26,7 @@
             <th mat-header-cell *matHeaderCellDef>{{labels.action}}</th>
             <td mat-cell *matCellDef="let element">
                <button mat-raised-button color="primary" (click)="openEditDialog(element)">{{labels.editButton}}</button>
-               <button mat-raised-button (click)="deleteData(element)">{{labels.deleteButton}}</button>
+               <button mat-raised-button (click)="editDeleteDetails(element)">{{labels.deleteButton}}</button>
             </td>
          </ng-container>
          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

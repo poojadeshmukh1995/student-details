@@ -5,7 +5,7 @@ import { IStudentData } from '../shared/models/details.model';
 import { Constant } from '../shared/models/constants';
 import { EditDataComponent } from '../shared/component/edit-data/edit-data.component';
 import { Labels } from '../shared/models/labels';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -25,28 +25,21 @@ export class StudentDetailsComponent implements OnInit {
          this.dataSource.data.push(this.studentDataService.getNewStudentData());
       }
    }
+   // to open edit dialog box
    openEditDialog(rowData) {
       const dialogRef = this.matDialog.open(EditDataComponent, { data: rowData });
       dialogRef.afterClosed().subscribe(result => {
-         this.saveNewDetails(result, rowData);
+         result ? this.editDeleteDetails(rowData, result) : '';
       });
    }
-
-   saveNewDetails(newDetails, oldDetails) {
+   // to save and delete the details
+   editDeleteDetails(oldDetails, newDetails?) {
       const tempArray = this.dataSource.filteredData;
       const index = tempArray.indexOf(oldDetails);
       if (index > -1) {
-         tempArray.splice(index, 1, newDetails);
+         newDetails ? tempArray.splice(index, 1, newDetails) : tempArray.splice(index, 1);;
          this.dataSource = new MatTableDataSource(tempArray);
       }
 
-   }
-   deleteData(data) {
-      const tempArray = this.dataSource.filteredData;
-      const index = tempArray.indexOf(data);
-      if (index > -1) {
-         tempArray.splice(index, 1);
-         this.dataSource = new MatTableDataSource(tempArray);
-      }
    }
 }

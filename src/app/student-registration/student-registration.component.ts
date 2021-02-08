@@ -16,6 +16,7 @@ export class StudentRegistrationComponent implements OnInit {
    constructor(private readonly fb: FormBuilder, private readonly router: Router,
                private readonly studentDataService: StudentDataService) { }
 
+   // simple reactive form validation
    ngOnInit() {
       this.registerForm = this.fb.group({
          firstName: ['', [Validators.required]],
@@ -28,6 +29,7 @@ export class StudentRegistrationComponent implements OnInit {
          city: ['', [Validators.required]],
       });
    }
+   // on student register
    onRegister() {
       this.studentDataService.setNewStudentData(this.registerForm.value);
       this.router.navigateByUrl('/student-details');

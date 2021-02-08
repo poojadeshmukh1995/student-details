@@ -8,9 +8,11 @@ import { IStudentData } from './shared/models/details.model';
 export class StudentDataService {
    newStudentData: IStudentData;
    constructor() { }
+   // to set the new student details
    setNewStudentData(data: IStudentData) {
       this.newStudentData = data;
    }
+   // to get the new student details
    getNewStudentData(): IStudentData {
       return this.newStudentData;
    }
